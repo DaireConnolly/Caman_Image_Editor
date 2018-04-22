@@ -3,8 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <title>Caman Image Editor</title>
+<link href="camanImageEditor.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="camanImageEditor.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 </head>
-<body>
 
+<body>
+	<h1>On-the-Go Photo Manipulator</h1>
+	<div>
+		<img id="image" class="img">
+
+		<div>
+			<button id="save">Save Image</button>
+			<input type="file" id="load" />
+		</div>
+	</div>
 </body>
 </html>
