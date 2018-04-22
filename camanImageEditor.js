@@ -9,4 +9,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		//document.getElementById("image").width = "50%";
 	};
 	loadImage.onchange = loadInputHandler;
+
+		//Applies effects
+	function changeSliderHandler(event) {
+		Caman("#image", function renderCaman() {
+ 			this.revert(false);
+			this[event.target.name](event.target.value).render();
+		});
+	};
+
 }, false);
