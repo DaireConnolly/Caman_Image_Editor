@@ -29,4 +29,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var hueRange = document.getElementById("hue");
 	hueRange.onchange = changeSliderHandler;
+
+		//Applies filters
+	function filterButtonHandler(event) {
+		Caman("#image", function() {
+			this.revert(false);
+			this[event.target.id]().render();
+		});
+	};
+
+	var filterButtons = document.querySelectorAll(".filter");
+	filterButtons.forEach(function(filterButton){
+		filterButton.onclick = filterButtonHandler;
+	});
 }, false);
