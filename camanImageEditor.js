@@ -18,4 +18,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	};
 
+	var brightnessRange = document.getElementById("brightness");
+	brightnessRange.onchange = changeSliderHandler;
+
+	var vibranceRange = document.getElementById("vibrance");
+	vibranceRange.onchange = changeSliderHandler;
+
+	var contrastRange = document.getElementById("contrast");
+	contrastRange.onchange = changeSliderHandler;
+
+	var hueRange = document.getElementById("hue");
+	hueRange.onchange = changeSliderHandler;
 }, false);
