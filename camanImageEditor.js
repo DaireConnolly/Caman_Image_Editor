@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		//document.getElementById("image").width = "50%";
 		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
 
-		storageRef.put(imageFile);
+		storedImage.put(imageFile);
 	};
 	loadImage.onchange = loadInputHandler;
 
