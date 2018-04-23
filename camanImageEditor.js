@@ -1,12 +1,23 @@
 // JavaScript source code
 document.addEventListener("DOMContentLoaded", function(){
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAs-8WjkBDGIq8kCtWNuggOYFHbdlpMgEQ",
+    authDomain: "main-project-2018-image-edit.firebaseapp.com",
+    databaseURL: "https://main-project-2018-image-edit.firebaseio.com",
+    projectId: "main-project-2018-image-edit",
+    storageBucket: "main-project-2018-image-edit.appspot.com",
+    messagingSenderId: "1016042878808"
+  };
+  firebase.initializeApp(config);
+/*
 	function setupEvents()
 			{
 				postImage();
 				document.getElementById("save").addEventListener("click", storeImage);
 			}
-
+*/
 	//Loads and replaces loaded image
 	var loadImage = document.getElementById("load");
 	function loadInputHandler(event) {
@@ -14,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function(){
 		var imageElement = document.getElementById("image");
 		imageElement.setAttribute("src", URL.createObjectURL(imageFile));
 		//document.getElementById("image").width = "50%";
+		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
+
+		storageRef.put(imageFile);
 	};
 	loadImage.onchange = loadInputHandler;
 
@@ -50,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		filterButton.onclick = filterButtonHandler;
 	});
 
+
+	/*
 	function storeImage()
 	{
 		var saveImage = imageFile;
@@ -64,4 +80,5 @@ document.addEventListener("DOMContentLoaded", function(){
 			
 		saveImage.setAttribute("src", URL.createObjectURL(imageFile));
 	}
+	*/
 }, false);

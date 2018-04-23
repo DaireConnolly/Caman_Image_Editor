@@ -6,7 +6,20 @@
 <link href="camanImageEditor.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="camanImageEditor.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAs-8WjkBDGIq8kCtWNuggOYFHbdlpMgEQ",
+    authDomain: "main-project-2018-image-edit.firebaseapp.com",
+    databaseURL: "https://main-project-2018-image-edit.firebaseio.com",
+    projectId: "main-project-2018-image-edit",
+    storageBucket: "main-project-2018-image-edit.appspot.com",
+    messagingSenderId: "1016042878808"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 
 <body>
