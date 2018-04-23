@@ -42,4 +42,19 @@ document.addEventListener("DOMContentLoaded", function(){
 	filterButtons.forEach(function(filterButton){
 		filterButton.onclick = filterButtonHandler;
 	});
+
+	function storeImage()
+	{
+		var saveImage = imageFile;
+		var myKey = "myKey";
+			
+		window.localStorage.setItem(myKey,saveImage);
+	}
+
+	function postImage()
+	{
+		var item = window.localStorage.getItem("myKey");
+			
+		saveImage.setAttribute("src", URL.createObjectURL(imageFile));
+	}
 }, false);
