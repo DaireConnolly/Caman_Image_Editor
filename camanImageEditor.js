@@ -1,5 +1,12 @@
 // JavaScript source code
 document.addEventListener("DOMContentLoaded", function(){
+
+	function setupEvents()
+			{
+				postImage();
+				document.getElementById("save").addEventListener("click", storeImage);
+			}
+
 	//Loads and replaces loaded image
 	var loadImage = document.getElementById("load");
 	function loadInputHandler(event) {
