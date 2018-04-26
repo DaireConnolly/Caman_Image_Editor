@@ -11,13 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     messagingSenderId: "1016042878808"
   };
   firebase.initializeApp(config);
-/*
-	function setupEvents()
-			{
-				postImage();
-				document.getElementById("save").addEventListener("click", storeImage);
-			}
-*/
+
 	//Loads and replaces loaded image
 	var loadImage = document.getElementById("load");
 	function loadInputHandler(event) {
@@ -64,21 +58,4 @@ document.addEventListener("DOMContentLoaded", function(){
 		filterButton.onclick = filterButtonHandler;
 	});
 
-
-	/*
-	function storeImage()
-	{
-		var saveImage = imageFile;
-		var myKey = "myKey";
-			
-		window.localStorage.setItem(myKey,saveImage);
-	}
-
-	function postImage()
-	{
-		var item = window.localStorage.getItem("myKey");
-			
-		saveImage.setAttribute("src", URL.createObjectURL(imageFile));
-	}
-	*/
 }, false);
