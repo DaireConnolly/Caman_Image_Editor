@@ -12,26 +12,36 @@ document.addEventListener("DOMContentLoaded", function(){
   };
   firebase.initializeApp(config);
 
+  	var loadImage = document.getElementById("load");
 	//Loads and replaces loaded image
-	var loadImage = document.getElementById("load");
 	function loadInputHandler(event) {
-		var imageFile = event.target.files[0];
 		var imageElement = document.getElementById("image");
+		var imageFile = event.target.files[0];
+		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
+		var downloadURL = storedImage.getDownloadURL;
+		//imageElement.setAttribute("src", downloadURL);
 		imageElement.setAttribute("src", URL.createObjectURL(imageFile));
 		//document.getElementById("image").width = "50%";
-		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
 
 		storedImage.put(imageFile);
+		/*
+		var downloadURL = storedImage.getDownloadURL;
+		var postKey = firebase.database().ref("Posts/").push().key;
+		var updates = {};
+		var postData = downloadURL;
+		updates["/Posts/" + postKey] = postData;
+		firebase.database().ref().update(updates);
+		*/
 	};
 	loadImage.onchange = loadInputHandler;
 
-		//Applies effects
+	//Applies effects
 	function changeSliderHandler(event) {
 		Caman("#image", function renderCaman() {
  			this.revert(false);
 			this[event.target.name](event.target.value).render();
 		});
-	};
+	}
 
 	var brightnessRange = document.getElementById("brightness");
 	brightnessRange.onchange = changeSliderHandler;
