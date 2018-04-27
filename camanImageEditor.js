@@ -40,11 +40,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	var prevImage = document.getElementById("prev");
 	function prevInputHandler(event) {
 		
-		//var downloadURL = storedImage.getDownloadURL;
+		var imageElement = document.getElementById("image");
 		imageElement.setAttribute("src", downloadURL);
 		console.log(downloadURL);
 	};
 	prevImage.onclick = prevInputHandler;
+
+	var addTitle = document.getElementById("titleButton");
+	function addTitleHandler(event){
+		var i = 1;
+		imageHolder.innerHTML = imageHolder.innerHTML + "<br> <h3>Title</h3> <input type='text' name='labelTitle'+ i>"
+	}
+	addTitle.onclick = addTitleHandler;
 
 	//Applies effects
 	function changeSliderHandler(event) {
