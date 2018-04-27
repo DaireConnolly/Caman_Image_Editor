@@ -46,12 +46,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	prevImage.onclick = prevInputHandler;
 
-	var addTitle = document.getElementById("titleButton");
+	var addTitle = document.getElementById("addTitleButton");
 	function addTitleHandler(event){
 		var i = 1;
 		imageHolder.innerHTML = imageHolder.innerHTML + "<br> <h3>Title</h3> <input type='text' name='labelTitle'+ i>"
 	}
 	addTitle.onclick = addTitleHandler;
+
+	var removeTitle = document.getElementById("remTitleButton");
+	function removeTitleHandler(event){
+		imageHolder.innerHTML = imageHolder.innerHTML - "<br> <h3>Title</h3> <input type='text' name='labelTitle'>" + "<h1 id='imageHolder'>On-the-Go Photo Manipulator</h1>"
+	}
+	removeTitle.onclick = removeTitleHandler;
 
 	//Applies effects
 	function changeSliderHandler(event) {
