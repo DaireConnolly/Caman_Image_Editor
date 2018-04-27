@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		//document.getElementById("image").width = "50%";
 
 		storedImage.put(imageFile);
+
+		//imageElement.setAttribute("src", downloadURL);
 		/*
 		var downloadURL = storedImage.getDownloadURL;
 		var postKey = firebase.database().ref("Posts/").push().key;
@@ -34,6 +36,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		*/
 	};
 	loadImage.onchange = loadInputHandler;
+
+	var prevImage = document.getElementById("prev");
+	function prevInputHandler(event) {
+		
+		//var downloadURL = storedImage.getDownloadURL;
+		imageElement.setAttribute("src", downloadURL);
+		console.log(downloadURL);
+	};
+	prevImage.onclick = prevInputHandler;
 
 	//Applies effects
 	function changeSliderHandler(event) {
