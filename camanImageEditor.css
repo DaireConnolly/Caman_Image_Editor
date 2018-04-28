@@ -3,7 +3,8 @@
 	text-align: center;
 	font-family: "verdana";
 	font-size: 20px;
-	background-color: #857860;
+	background-color: #403D58;
+	color: #F2EFEA;
 }
 
 h1
@@ -20,4 +21,13 @@ img
 {
 	width: 50%;
 	padding: 10px;
+	border:2px solid #DAD2D8;
+}
+
+button
+{
+    background-color:#403D58;
+	color: #77ffff;
+	text-align: center;
+    border: 2px solid  #77ffff;
 }

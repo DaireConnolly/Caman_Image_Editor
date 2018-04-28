@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
   	var loadImage = document.getElementById("load");
 	//Loads and replaces loaded image
 	function loadInputHandler(event) {
+		document.getElementById("image").style.border = "0px";
 		var imageElement = document.getElementById("image");
 		var imageFile = event.target.files[0];
 		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
