@@ -31,3 +31,11 @@ button
 	text-align: center;
     border: 2px solid  #77ffff;
 }
+
+input
+{
+    background-color:#403D58;
+	color: #77ffff;
+	text-align: center;
+    border: 2px solid  #77ffff;
+}
