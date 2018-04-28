@@ -19,24 +19,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		var imageFile = event.target.files[0];
 		var storedImage = firebase.storage().ref("image_folder/" + imageFile.name);
 		var downloadURL = storedImage.getDownloadURL;
-		//imageElement.setAttribute("src", downloadURL);
 		imageElement.setAttribute("src", URL.createObjectURL(imageFile));
-		//document.getElementById("image").width = "50%";
 
 		storedImage.put(imageFile);
-
-		//imageElement.setAttribute("src", downloadURL);
-		/*
-		var downloadURL = storedImage.getDownloadURL;
-		var postKey = firebase.database().ref("Posts/").push().key;
-		var updates = {};
-		var postData = downloadURL;
-		updates["/Posts/" + postKey] = postData;
-		firebase.database().ref().update(updates);
-		*/
 	};
 	loadImage.onchange = loadInputHandler;
 
+	//Loads last Image using FirebaseJS
 	var prevImage = document.getElementById("prev");
 	function prevInputHandler(event) {
 		
@@ -46,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	prevImage.onclick = prevInputHandler;
 
+	//Title Box using Dom Manipulator
 	var addTitle = document.getElementById("addTitleButton");
 	function addTitleHandler(event){
 		var i = 1;
@@ -63,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	function changeSliderHandler(event) {
 		Caman("#image", function renderCaman() {
  			this.revert(false);
+			document.getElementById("image").style.width = "50%";
 			this[event.target.name](event.target.value).render();
 		});
 	}
@@ -83,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	function filterButtonHandler(event) {
 		Caman("#image", function() {
 			this.revert(false);
+			document.getElementById("image").style.width = "50%";
 			this[event.target.id]().render();
 		});
 	};
